@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@400;600;700;800&family=Poppins:ital@0;1&display=swap');
+
+html {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color:#bbaab8;
+}
+
+header {
+    background-color: #44426e;
+    color: white;
+    padding: 3rem 2rem;
+}
+
+header h1{
+/*rem: unidad relacionada con la fuente tipográfica base / 16px*/
+    font-size: 4rem;
+}
+
+.contenedor {
+/*  display: flex (ayuda a colocar las cajas como si fueran
+                   celdas de tablas)*/
+    display: flex;
+    width: 400px;
+    margin-left: 10px;
+    color: #fff;
+}
+
+.medio {
+    margin-left: 10px;
+}
+
+.contenedor2 {
+    margin-left: 10px;
+    width: 400px;
+    color: #fff;
+}
+
+section article {
+/*  transition:: (origen: por donde empieza la animacion / delay)
+                 (duracion: de la animacion)
+                 (algoritmo: de la animacion)*/
+    transition: box-shadow 0.3s ease;
+    background-color: #776483;
+    margin: 10px 0;
+    border-radius: 0.5rem;
+    padding: 0.25rem 0;
+}
+
+section article h2, section article p {
+    margin-left: 10px;
+}
+
+section article:hover {
+/*  box shadow: (1Ar: dezplazamiento horizontal de la sombra)
+                (2Ar: dezplazamiento vertical de la sombra)
+                (3Ar: difuminado)
+                (4Ar: color de la sombra)*/
+    box-shadow: 0 0.1rem 0.4rem #000;
+}
+
+section article img, section article video {
+    width: 400px;
+}
+
+footer {
+    background-color: #292643;
+    padding: 3rem;
+    color: #fff;
+}
+
+footer a {
+    transition: color 0.3 ease;
+    text-decoration: none;
+}
+
+a {
+    color: #fff;
+}
+
+footer a:hover {
+    color: #bbaab8;
+}
+
+.inter:visited {
+    color:#e99e75;
+}
+
+.inter:active {
+    color: #776483;
+}
