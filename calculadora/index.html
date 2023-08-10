@@ -7,21 +7,28 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <form id="formulario" name="">
+        <h2>Calculadora</h2>
+
+        <label>Número 1: </label>
+        <input type="text" id="numero1" name="operando1" placeholder="Escribe un número" required>
     
-    <header>
-        <h1>Calculadora</h1>
-    </header>
-
-    <form action="#">
-        <label for="lang">Operaciones</label>
-        <select name="lenguajes" id="lang">
-          <option value="suma">Suma</option>
-          <option value="resta">Resta</option>
-          <option value="division">División</option>
-          <option value="multiplicacion">Multiplicación</option>
+        <label>Operación</label>
+        <select name="opciones" id="opciones">
+            <option value="suma">Suma</option>
+            <option value="resta">Resta</option>
+            <option value="division">División</option>
+            <option value="multiplicacion">Multiplicación</option>
         </select>
-        <input type="submit" value="Enviar" />
-  </form>
 
+        <label>Número 2: </label>
+        <input type="text" id="numero2" name="operando2" placeholder="Escribe un número" required>
+
+        <button onclick="calcular();">Calcular</button>
+        <button onclick="limpiarCampos();">Limpiar</button>
+
+        <p >El resultado es: <span id="el-resultado"></span></p>
+    </form>
+    <script src="calculadora.js"></script>
 </body>
 </html>
