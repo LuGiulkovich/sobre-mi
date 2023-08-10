@@ -13,19 +13,15 @@ function calcular() {
     switch (opcion) {
         case "suma":
             resultado = suma(operando1, operando2);
-            alert(resultado);
             break;
         case "resta":
             resultado = resta(operando1, operando2);
-            alert(resultado);
             break;
         case "division":
             resultado = division(operando1, operando2);
-            alert(resultado);
             break;
         case "multiplicacion":
             resultado = multiplicacion(operando1, operando2);
-            alert(resultado);
             break;
     }
     document.getElementById('el-resultado').innerHTML = resultado;
