@@ -8,12 +8,12 @@
 </head>
 <body>
     <form id="formulario" name="">
-        <h2>Calculadora</h2>
+        <h2>"Calculadora"</h2>
 
-        <label>Número 1: </label>
+        <label>Número 1:</label>
         <input type="text" id="numero1" name="operando1" placeholder="Escribe un número" required>
     
-        <label>Operación</label>
+        <label>Operaciones</label>
         <select name="opciones" id="opciones">
             <option value="suma">Suma</option>
             <option value="resta">Resta</option>
@@ -21,13 +21,16 @@
             <option value="multiplicacion">Multiplicación</option>
         </select>
 
-        <label>Número 2: </label>
+        <label>Número 2:</label>
         <input type="text" id="numero2" name="operando2" placeholder="Escribe un número" required>
 
-        <button onclick="calcular();">Calcular</button>
+        <button type="button" onclick="calcular();">Calcular</button>
         <button onclick="limpiarCampos();">Limpiar</button>
 
-        <p >El resultado es: <span id="el-resultado"></span></p>
+        <p>El resultado es:</p>
+
+        <p id="el-resultado"></p>
+
     </form>
     <script src="calculadora.js"></script>
 </body>
