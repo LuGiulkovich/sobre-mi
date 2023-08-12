@@ -4,8 +4,8 @@ function limpiarCampos() {
 
 function calcular() {
 
-    let operando1 = parseInt(document.getElementById('numero1').value);
-    let operando2 = parseInt(document.getElementById('numero2').value);
+    let operando1 = parseFloat(document.getElementById('numero1').value);
+    let operando2 = parseFloat(document.getElementById('numero2').value);
     let opcion = document.getElementById('opciones').value;
     
     let resultado;
