@@ -1,27 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka&family=Handjet:wght@400;600;700;800&family=Poppins:ital@0;1&family=Rubik&display=swap');
+
+html {
+    font-family: 'Rubik', sans-serif;
+}
 
 body {
     margin: 0 auto;
     padding: 0;
-    background-color: #e1e1e1;
+    background-color: #284b63;
 }
 
 form {
     background-color: #fff;
     width: 300px;
     margin: 10% auto;
-    border: 1px solid #999;
+    border: 1px solid #d9d9d9;
     border-radius: 10px;
     position: relative;
 }
 
 h2 {
+    font-size: 2rem;
     text-align: center;
     margin: 1rem;
 }
 
 #numero1 {
     display: flex;
-    margin: 10px auto;
+    margin: 10px auto 30px;
     padding: .5rem;
 }
 
@@ -35,13 +41,14 @@ label  {
 #opciones {
     display: flex;
     margin: 10px auto;
+    margin-bottom: 30px;
     justify-content: center;
     font-size: 1rem;
 }
 
 #numero2 {
     display: flex;
-    margin: 20px auto;
+    margin: 10px auto 30px;
     padding: .5rem;
 }
 
@@ -49,8 +56,8 @@ button {
     display: flex;
     margin: 10px auto;
     padding: .5rem 1.5rem;
-    color: #e1e1e1;
-    background-color: yellowgreen;
+    color: #ffffff;
+    background-color: #3c6e71;
     border: none;
     border-radius: 5px;
 }
