@@ -1,70 +1,221 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka&family=Handjet:wght@400;600;700;800&family=Poppins:ital@0;1&family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz@10..48&family=Fredoka&family=Handjet:wght@400;600;700;800&family=Poppins:ital@0;1&family=Rubik&display=swap');
 
-html {
-    font-family: 'Rubik', sans-serif;
-}
-
+/* Cuerpo */
 body {
-    margin: 0 auto;
-    padding: 0;
+    font-family: 'Rubik', sans-serif;
     background-color: #284b63;
+    width: 400px;
+    margin: 10px auto;
+    background: url(queHaces.jpg);
 }
 
-form {
+/* Estilo del Encabezado */
+.formulario__encabezado {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    margin: 5px auto;
+    padding: 1rem;
     background-color: #fff;
-    width: 300px;
-    margin: 10% auto;
-    border: 1px solid #d9d9d9;
-    border-radius: 10px;
-    position: relative;
-}
-
-h2 {
-    font-size: 2rem;
+    border: 2px solid #d9d9d9;
+    border-radius: 5px;
     text-align: center;
-    margin: 1rem;
+    font-size: 1.5rem;
 }
 
-#numero1 {
-    display: flex;
-    margin: 10px auto 30px;
-    padding: .5rem;
-}
-
-label  {
-    display: flex;
-    margin: 0 auto;
-    justify-content: center;
-    font-size: 20px;
-}
-
-#opciones {
-    display: flex;
-    margin: 10px auto;
-    margin-bottom: 30px;
-    justify-content: center;
-    font-size: 1rem;
-}
-
-#numero2 {
-    display: flex;
-    margin: 10px auto 30px;
-    padding: .5rem;
-}
-
-button {
-    display: flex;
-    margin: 10px auto;
-    padding: .5rem 1.5rem;
-    color: #ffffff;
-    background-color: #3c6e71;
-    border: none;
+/* Estilo de la Calculadora */
+.formulario {
+    display: grid;
+    place-items: center;
+    background-color: #fff; 
+    border: 2px solid #d9d9d9;
     border-radius: 5px;
 }
 
-p {
+/* Estilo de Todos los Label */
+.formulario__label {
+    text-align: center;
+    display: block;
+    font-weight: 700;
+    padding: 15px 0 0 0;
+    margin: 10px;
+    cursor: pointer;
+}
+
+/* Estilo del Input e Icono de Error */
+.formulario__grupo-input {
+    position: relative;
+}
+
+/* Estilo del Input */
+.formulario__input {
+    text-align: center;
+    width: 300px;
+    background: #fff;
+    border: 3px solid #d9d9d9;
+    border-radius: 3px;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 40px 0 10px;
+    transition: .3s ease all;
+    font-family: 'Rubik', sans-serif;
+}
+
+/* Estilo del Input cuando se le da click */
+.formulario__input:focus {
+    border: 3px solid #284b63;
+    outline: none;
+    box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
+}
+
+/* Estilo del mensaje Error (Validación) */
+.formulario__input-error, .formulario__input-grande1, .formulario__input-grande2{
+    font-size: 12px;
+    margin: 10px auto;
+    background: #bb2929;
+    color: #fff;
+    border-radius: 3px;
+    display: none;
+}
+
+/* Estilo del mensaje Error (Validación) con el "modificador" -activo
+   cuando se ejecute */
+.formulario__input-error-activado {
+    display: block;
+}
+
+/* Estilo del Icono de Error */
+.formulario__validacion-estado {
+    position: absolute;
+    right: 25px;
+    bottom: 15px;
+    z-index: 100;
+    font-size: 16px;
+    opacity: 0;
+}
+
+/* Estilo del Mensaje de Error */
+.formulario__mensaje {
+    display: none;
+}
+
+/* Estilo del Mensaje de Error con el "modificador" -activo
+    cuando se ejecute */
+.formulario__mensaje-activo {
+    margin-top: 15px;
+    height: 45px;
+    line-height: 45px;
+    background: #f66060;
+    color: #fff;
+    padding: 0 15px;
+    border-radius: 5px;
+    display: block;
+}
+
+.formulario__mensaje-activo-grande {
+    font-size: 0.9rem;
+}
+
+.formulario__mensaje-activo-pequeño {
+    font-size: 0.8rem;
+}
+
+/* Estilo del Mensaje de Error */
+.formulario__mensaje p {
+    margin: 0;
+}
+
+/* Estilo del Menú desplagable */
+select {
+    appearance: none;
+    outline: 0; 
+    border: 0!important;
+    background: #284b63;
+}
+
+/* EStilo del div contenedor del select */
+.formulario__select {
     display: flex;
-    margin: 20px auto;
-    justify-content: center;
-    font-size: 20px;
+    width: 20rem;
+    height: 3rem;
+    overflow: hidden;
+    border-radius: .25em;
+}
+
+/* Estilos adicionales del Menú desplegable */
+select {
+    text-align: center;
+    flex: 1;
+    padding: 0 .5em;
+    color: #fff;
+    cursor: pointer;
+    font-size: 13px;
+    font-family: 'Rubik', sans-serif;
+}
+
+/* Estilo de los Botones (Grupo) */
+.formulario__grupo-btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 5px;
+}
+
+/* Estilo de los Botones */
+.formulario__btn {
+    cursor: pointer;
+    width: 100px;
+    padding: 10px;
+    color: #fff;
+    background: #284b63;
+    border: none;
+    border-radius: 5px;
+    transition: box-shadow .3s ease;
+}
+
+/* Estilo de los botones al pasar el mouse por encima */
+.formulario__btn:hover {
+    box-shadow: 1px 1px 10px rgba(0,0,0,1);
+}
+
+/* Estilo de Resultado (Grupo)*/
+.formulario__mensaje-resultado {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 600;
+    margin: 0;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+/* Estilo del Resultado */
+.formulario__mensaje-resultado-numero {
+    border: 3px solid #284b63;
+    border-radius: 5px;
+    margin: 10px 0 20px 0;
+}
+
+/* ----- Estilos para validación ----- */
+
+/* Estilo de los labels correcto*/
+.formulario__grupo-correcto .formulario__label {
+    color: #1ed12d;
+}
+
+/* Estilo del borde del input correcto*/
+.formulario__grupo-correcto .formulario__input {
+    border: 3px solid #1ed12d;
+}
+
+/* Estilo del icono incorrecto */
+.formulario__grupo-incorrecto .formulario__validacion-estado {
+    color: #bb2929;
+    opacity: 1;
+}
+
+/* Estilo de los labels incorrecto */
+.formulario__grupo-incorrecto .formulario__label {
+    color: #bb2929;
+}
+
+/* Estilo del borde del input incorrecto*/
+.formulario__grupo-incorrecto .formulario__input {
+    border: 3px solid #bb2929;
 }
