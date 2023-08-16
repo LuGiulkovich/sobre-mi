@@ -1,37 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-    <form id="formulario" name="">
-        <h2>"Calculadora"</h2>
 
-        <label>Número 1:</label>
-        <input type="text" id="numero1" name="operando1" placeholder="Escribe un número" required>
-    
-        <label>Operaciones</label>
-        <select name="opciones" id="opciones">
-            <option value="suma">Suma</option>
-            <option value="resta">Resta</option>
-            <option value="division">División</option>
-            <option value="multiplicacion">Multiplicación</option>
+<body id="body">
+  <!-- Grupo: Encabezado -->
+  <div class="formulario__encabezado">
+    <h2>Calculadora</h2>
+  </div>
+
+  <!-- Formulario  -->
+  <form class="formulario" id="formulario">
+    <!-- Grupo: Número 1 -->
+    <div class="formulario__grupo" id="grupo__numero1">
+      <label for="numero1" class="formulario__label">Número 1:</label>
+      <div class="formulario__grupo-input">
+        <input type="num" class="formulario__input" name="operando1" id="numero1" placeholder="Escribe un número" />
+        <i class="formulario__validacion-estado fa-solid fa-xmark"></i>
+      </div>
+      <p class="formulario__input-error" id="formulario__input-error1">
+        El número no puede contener letras ni espacios. Intente de nuevo.
+      </p>
+      <p class="formulario__input-error" id="formulario__input-grande1">
+        El número es muy largo para operar, ingrese uno nuevamente.
+      </p>
+    </div>
+
+    <!-- Grupo: Operaciones/Menú Desplegable -->
+    <div class="formulario__grupo" id="operaciones">
+      <label for="opciones" class="formulario__label">Operaciones</label>
+      <div class="formulario__select">
+        <select class="formulario__select-options" name="opciones" id="opciones">
+          <option selected disabled value="vacio">Elige una operación</option>
+          <option value="suma">Suma</option>
+          <option value="resta">Resta</option>
+          <option value="division">División</option>
+          <option value="multiplicacion">Multiplicación</option>
         </select>
+      </div>
+    </div>
 
-        <label>Número 2:</label>
-        <input type="text" id="numero2" name="operando2" placeholder="Escribe un número" required>
+    <!-- Grupo: Número 2 -->
+    <div class="formulario__grupo" id="grupo__numero2">
+      <label for="numero2" class="formulario__label">Número 2:</label>
+      <div class="formulario__grupo-input">
+        <input type="num" class="formulario__input" name="operando2" id="numero2" placeholder="Escribe un número" />
+        <i class="formulario__validacion-estado fa-solid fa-xmark"></i>
+      </div>
+      <p class="formulario__input-error" id="formulario__input-error2">
+        El número no puede contener letras ni espacios. Intente de nuevo.
+      </p>
+      <p class="formulario__input-error" id="formulario__input-grande2">
+        El número es muy largo para operar, ingrese uno nuevamente.
+      </p>
+    </div>
 
-        <button type="button" onclick="calcular();">Calcular</button>
-        <button onclick="limpiarCampos();">Limpiar</button>
+    <!-- Grupo: Mensajes de Error -->
+    <div class="formulario__mensaje" id="formulario__mensaje-operacion">
+      <p>
+        <i class="fa-solid fa-triangle-exclamation"></i><b>Error:</b> Por
+        favor eliga una operación.
+      </p>
+    </div>
 
-        <p>El resultado es:</p>
+    <div class="formulario__mensaje" id="formulario__mensaje-0">
+      <p>
+        <i class="fa-solid fa-triangle-exclamation"></i><b>Error:</b> No se
+        puede dividir por 0.
+      </p>
+    </div>
+    
+    <div class="formulario__mensaje" id="formulario__mensaje-tamaño-grande">
+      <p>
+        <i class="fa-solid fa-triangle-exclamation"></i><b>Error:</b>El
+        Resultado es muy grande para ser mostrado.
+      </p>
+    </div>
 
-        <p id="el-resultado"></p>
+    <div class="formulario__mensaje" id="formulario__mensaje-tamaño-pequeño">
+      <p>
+        <i class="fa-solid fa-triangle-exclamation"></i><b>Error:</b>El
+        Resultado es muy pequeño para ser mostrado.
+      </p>
+    </div>
 
-    </form>
-    <script src="calculadora.js"></script>
+    <!-- Grupo: Botones -->
+    <div class="formulario__grupo-btn" id="formulario__grupo-btn">
+      <button class="formulario__btn" onclick="limpiarCampos();">
+        Limpiar
+      </button>
+      <button class="formulario__btn" type="button" onclick="calcular();" onclick="verificarCampos();">
+        Calcular
+      </button>
+    </div>
+
+    <!-- Grupo: Resultado -->
+    <div class="formulario__grupo">
+      <p class="formulario__mensaje-resultado" id="formulario__mensaje-resultado">
+        Resultado
+      </p>
+      <p class="formulario__mensaje-resultado formulario__mensaje-resultado-numero" id="el-resultado"></p>
+    </div>
+  </form>
+
+  <!-- Conexiones -->
+  <script src="calculadora.js"></script>
+  <script src="https://kit.fontawesome.com/f463a26620.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
