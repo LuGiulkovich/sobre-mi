@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Barriecito&family=Bricolage+Grotesque:opsz@10..48&family=Fredoka&family=Handjet:wght@400;600;700;800&family=Poppins:ital@0;1&family=Rubik&display=swap');
+
+/* Estilos del Body */
+body {
+    font-family: 'Barriecito', sans-serif;
+    width: 500px;
+    margin: 10px auto;
+    background: url(juegoppt.png);
+}
+
+/* Estilos del Título */
+.juego__titulo {
+    font-size: 3rem;
+    margin: 5px 0;
+    padding: .5rem;
+    text-align: center;
+    color: #000;
+    background-color: #fff;
+    border: 6px solid #000;
+    border-radius: 5px;
+}
+
+/* Estilos del div contenedor del juego */
+.juego {
+    margin: 0 auto;
+    padding: 5px;
+    background: #fff;
+    border: 6px solid #000;
+    border-radius: 5px;
+}
+
+/* Estilos del Subtítulo */
+.juego__subtitulo {
+    margin: 0 auto;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 20px;
+}
+
+/* Estilos de la Interfaz del jugador */
+.juego__interfaz-jugador {
+    text-align: center;
+    margin: 0;
+    padding: 3px;
+    background: #0085d1;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 25px;
+}
+
+/* Estilos del p del jugador */
+.juego__jugador-p {
+    margin: 5px;
+}
+
+/* Estilos del input */
+.juego__interfaz-input {
+    margin: 5px 0; 
+    padding: 10px;
+    background: #003b5d;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+/* Estilos de la Interfaz de las Partidas*/
+.juego__partidas {
+    text-align: center;
+    margin: 10px 0;
+    padding: 3px;
+    background: #e60012;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 25px;
+}
+
+/* Estilos de la Cantidad de las partidas */
+.juego__cant-partidas {
+    margin: 5px 0; 
+    padding: 10px;
+    background: #5b0008;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+/* Estilos de la Eleccion */
+.juego__eleccion {
+    text-align: center;
+    margin: 10px 0;
+    padding: 3px;
+    background: #ffe000;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 30px;
+}
+
+/* Estilos del div contenedor de los botones */
+.juego__opciones {
+    margin: 5px 0; 
+    padding: 10px;
+    background-color: #877700;
+    border-radius: 5px;
+    justify-content: center;
+    display: flex;
+}
+
+/* Estilos para los botones */
+.juego__btn {
+    width: 50px;
+    height: 30px;
+    margin: 0 10px;
+}
+
+/* Estilos para el boton de Jugar*/
+.juego__btn-jugar {
+    margin: 0 auto 10px;
+    padding: 10px 75px;
+    display: flex;
+    background-color: yellowgreen;
+    border: 3px solid #000;
+    border-radius: 5px;
+    font-size: 2rem;
+    font-family: 'Barriecito', sans-serif;
+    transition: box-shadow 0.3s ease;
+}
+
+.juego__btn-jugar:hover {
+    box-shadow: 0 0.2rem 0.5rem #000;
+}
+
+/* Estilos del boton para reiniciar la partida*/
+.juego__btn-reinicio {
+    margin: 10px 0;
+    padding: 10px auto;
+    background-color: rgb(95, 122, 40);
+    border: 3px solid #000;
+    border-radius: 5px;
+    font-size: 20px;
+    font-family: 'Barriecito', sans-serif;
+    transition: box-shadow 0.3s ease;
+}
+
+.juego__btn-reinicio:hover {
+    box-shadow: 0 0.2rem 0.5rem #000;
+}
