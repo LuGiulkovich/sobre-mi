@@ -1,25 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Handjet:wght@400;600;700;800&family=Poppins:ital@0;1&display=swap');
 
+/* Estilos de la fuente del HTML */
 html {
     font-family: 'Poppins', sans-serif;
 }
 
+/* Estilos del body */
 body {
     margin: 0;
     background-color:#bbaab8;
 }
 
+/* ----- Estilos del encabezado ------ */
 header {
     background-color: #44426e;
     color: white;
     padding: 3rem 2rem;
 }
 
+/* Tamaño del titulo */
 header h1{
 /*rem: unidad relacionada con la fuente tipográfica base / 16px*/
     font-size: 4rem;
 }
 
+/* ----- Estilos de la informacion del alumno ----- */
+
+/* Estilos de los Datos Básicos */
 .contenedor {
 /*  display: flex (ayuda a colocar las cajas como si fueran
                    celdas de tablas)*/
@@ -29,16 +36,52 @@ header h1{
     color: #fff;
 }
 
+/* Distancia de Datos Básicos e Intereses */
 .medio {
     margin-left: 10px;
 }
 
+/* Estilo de Experiencias */
 .contenedor2 {
     margin-left: 10px;
     width: 400px;
     color: #fff;
 }
 
+/* --- Estilos de Proyectos --- */
+.medio2 {
+    margin-left: 10px;
+    width: 400px;
+    color: #fff;
+}
+
+/* Estilos de los links de Proyectos*/
+.medio2 a {
+    margin: 16px;
+    display: block;
+    text-decoration: none;
+}
+
+.medio2 a:hover {
+    color: #bbaab8;
+}
+
+
+.medio2 a:visited {
+    color:#e99e75;
+}
+
+.medio2 a:active {
+    color: #292643;
+}
+
+/* Estilos del div otros para que Experiencias
+y Proyectos queden uno al lado del otro */
+.otros {
+    display: flex;
+}
+
+/* Estilos de los articulos en general */
 section article {
 /*  transition:: (origen: por donde empieza la animacion / delay)
                  (duracion: de la animacion)
@@ -50,10 +93,6 @@ section article {
     padding: 0.25rem 0;
 }
 
-section article h2, section article p {
-    margin-left: 10px;
-}
-
 section article:hover {
 /*  box shadow: (1Ar: dezplazamiento horizontal de la sombra)
                 (2Ar: dezplazamiento vertical de la sombra)
@@ -62,16 +101,24 @@ section article:hover {
     box-shadow: 0 0.1rem 0.4rem #000;
 }
 
+/* Estilos de los titulos y parrafos en general */
+section article h2, section article p {
+    margin-left: 10px;
+}
+
+/* Estilos de la imagen y del video */
 section article img, section article video {
     width: 400px;
 }
 
+/* Estilo del pie de pagina */
 footer {
     background-color: #292643;
     padding: 3rem;
     color: #fff;
 }
 
+/* --- Estilos de los links --- */
 footer a {
     transition: color 0.3 ease;
     text-decoration: none;
