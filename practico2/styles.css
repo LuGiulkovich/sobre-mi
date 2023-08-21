@@ -46,6 +46,11 @@ body {
     color: #fff;
     border-radius: 5px;
     font-size: 25px;
+    transition: box-shadow .3s ease;
+}
+
+.juego__interfaz-jugador:hover {
+    box-shadow: 0 0.2rem 1rem #000;
 }
 
 /* Estilos del p del jugador */
@@ -93,9 +98,15 @@ body {
     color: #fff;
     border-radius: 5px;
     font-size: 30px;
+    transition: box-shadow .3s ease;
 }
 
-/* Estilos del div contenedor de los botones */
+.juego__eleccion:hover {
+    box-shadow: 0 0.2rem 1rem #000;
+
+}
+
+/* Estilos del div contenedor de las imagenes */
 .juego__opciones {
     margin: 5px 0; 
     padding: 10px;
@@ -105,11 +116,30 @@ body {
     display: flex;
 }
 
-/* Estilos para los botones */
+/* Estilos de los botones */
 .juego__btn {
-    width: 50px;
-    height: 30px;
-    margin: 0 10px;
+    border: 5px solid #000;
+    border-radius: 100px;
+    opacity: .5;
+    transition: opacity .3s ease;
+}
+
+.juego__btn:hover {
+    opacity: 1;
+}
+
+/* Estilo para cuando se seleccione la opcion */
+.juego__btn-activa {
+    opacity: 1;
+    border-radius: 100px;
+    border: 5px solid yellowgreen !important;
+}
+
+/* ----- Estilos para las imagenes ----- */
+.juego__img {
+    width: 100px;
+    height: 100px;
+    margin: 10px 10px;
 }
 
 /* Estilos para el boton de Jugar*/
