@@ -144,3 +144,16 @@ body {
 .juego__btn-reinicio:hover {
     box-shadow: 0 0.2rem 0.5rem #000;
 }
+
+/* ----- Estilos para validacion de campo de Usuario Vacio ----- */
+.juego__mensaje-vacio {
+    display: none;
+}
+
+/* Acá se a mostrar con display: flex;*/
+.juego__mensaje-vacio-activado {
+    background-color: #fff;
+    border-radius: 5px;
+    color: red;
+    display: flex;
+}
