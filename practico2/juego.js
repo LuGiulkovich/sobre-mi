@@ -10,8 +10,6 @@ function reiniciarPartida() {
  * parte del usuario no esté vacio. */
 function campoVacio() {
     const nombre = nombreJugador.value;
-    console.log('funciona');
-    console.log(nombre);
 
     if (nombre === '') {
         console.log('hola')
@@ -22,3 +20,47 @@ function campoVacio() {
         document.getElementById('juego__mensaje-vacio').classList.add('juego__mensaje-vacio');
     }
 }
+
+/** Validacion de campo vacio al tocar tecla */
+nombreJugador.addEventListener('keyup', campoVacio);
+
+/** Funcion para seleccionar una de las opciones
+ * Piedra, Papel o Tijeras. */
+const piedra = document.getElementById('piedra');
+const papel = document.getElementById('papel');
+const tijeras = document.getElementById('tijeras');
+
+let pikachuYoTeEligo = '';
+
+piedra.addEventListener('click', () => {
+    document.getElementById('piedra').classList.add('juego__btn-activa');
+    document.getElementById('piedra').classList.remove('juego__btn');
+    document.getElementById('papel').classList.remove('juego__btn-activa');
+    document.getElementById('papel').classList.add('juego__btn');
+    document.getElementById('tijeras').classList.remove('juego__btn-activa');
+    document.getElementById('tijeras').classList.add('juego__btn');
+    pikachuYoTeEligo = "piedra";
+    console.log(pikachuYoTeEligo);
+});
+
+papel.addEventListener('click', () => {
+    document.getElementById('papel').classList.add('juego__btn-activa');
+    document.getElementById('papel').classList.remove('juego__btn');
+    document.getElementById('piedra').classList.remove('juego__btn-activa');
+    document.getElementById('piedra').classList.add('juego__btn');
+    document.getElementById('tijeras').classList.remove('juego__btn-activa');
+    document.getElementById('tijeras').classList.add('juego__btn');
+    pikachuYoTeEligo = "papel";
+    console.log(pikachuYoTeEligo);
+});
+
+tijeras.addEventListener('click', () => {
+    document.getElementById('tijeras').classList.add('juego__btn-activa');
+    document.getElementById('tijeras').classList.remove('juego__btn');
+    document.getElementById('piedra').classList.remove('juego__btn-activa');
+    document.getElementById('piedra').classList.add('juego__btn');
+    document.getElementById('papel').classList.remove('juego__btn-activa');
+    document.getElementById('papel').classList.add('juego__btn');
+    pikachuYoTeEligo = "tijeras";
+    console.log(pikachuYoTeEligo);
+});
