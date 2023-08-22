@@ -68,6 +68,17 @@ body {
     border-radius: 5px;
 }
 
+/* Estilos del input nombre*/
+.juego__interfaz-input-nombre {
+    position: relative;
+    text-align: center;
+    background: none;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    outline: 0px;
+}
+
 /* Estilos de la Interfaz de las Partidas*/
 .juego__partidas {
     text-align: center;
