@@ -2,6 +2,9 @@
 
 Este proyecto es una presentación de mi bastante simple.
 También en las siguientes carpetas se encuentran los proyectos que realizaré en el transcurso de este curso. Poniendo a prueba mis conocimientos.
+### Por si quieres darle un vistazo
+Aquí esta el link.
+* (https://lugiulkovich.github.io/sobre-mi/)
 
 ## Primer Proyecto
 
