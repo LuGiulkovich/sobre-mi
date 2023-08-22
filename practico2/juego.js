@@ -64,3 +64,16 @@ tijeras.addEventListener('click', () => {
     pikachuYoTeEligo = "tijeras";
     console.log(pikachuYoTeEligo);
 });
+
+/** Funcion para obtener una jugada aleatoria de la computadora */
+function jugadaPC() {
+    /** Aca con Math.random establezco que mis numeros aleatorios sean 0, 1 o 2 */
+    let numero = Math.floor(Math.random() * (2 - 0 + 1) + 0);
+    console.log(numero);
+}
+
+/** Guardo al boton Jugar en una variable */
+const pc = document.getElementById('juego__btn-jugar');
+
+/** Para darle el evento click y obtener la jugada de la PC */
+pc.addEventListener('click', jugadaPC);
