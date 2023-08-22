@@ -3,15 +3,15 @@
 /* Estilos del Body */
 body {
     font-family: 'Barriecito', sans-serif;
-    width: 500px;
     margin: 10px auto;
     background: url(juegoppt.png);
 }
 
 /* Estilos del Título */
 .juego__titulo {
+    width: 400px;
     font-size: 3rem;
-    margin: 5px 0;
+    margin: 5px auto;
     padding: .5rem;
     text-align: center;
     color: #000;
@@ -20,9 +20,17 @@ body {
     border-radius: 5px;
 }
 
+/* Estilos de la columna de partidas */
+.juego__orden {
+    margin: 0 auto;
+    width: fit-content;
+    display: flex;
+}
+
 /* Estilos del div contenedor del juego */
 .juego {
     margin: 0 auto;
+    margin-right: 5px;
     padding: 5px;
     background: #fff;
     border: 6px solid #000;
@@ -70,6 +78,7 @@ body {
 
 /* Estilos del input nombre*/
 .juego__interfaz-input-nombre {
+    width: 100%;
     position: relative;
     text-align: center;
     background: none;
@@ -79,26 +88,60 @@ body {
     outline: 0px;
 }
 
-/* Estilos de la Interfaz de las Partidas*/
-.juego__partidas {
+/* Estilos del div contenedor del las rondas */
+.juego__partidas-costado {
+    width: 400px;
+    margin: 0;
+    margin-left: 5px;
+    padding: .5rem;
     text-align: center;
+    color: #000;
+    background-color: #fff;
+    border: 6px solid #000;
+    border-radius: 5px;
+    display: none;
+}
+
+/* Estilos de las Partidas*/
+.juego__partidas {
     margin: 10px 0;
     padding: 3px;
     background: #e60012;
     color: #fff;
     border-radius: 5px;
     font-size: 25px;
+    display: flex;
+    justify-content: center;
 }
 
-/* Estilos de la Cantidad de las partidas */
-.juego__cant-partidas {
+
+
+/* Estilos del titulo de las rondas */
+.juego__partidas-rondas {
     margin: 5px 0; 
     padding: 10px;
     background: #5b0008;
-    display: flex;
-    justify-content: center;
     border-radius: 5px;
+    font-size: 1.3rem;
 }
+
+/* Estilo del ganador */
+.juego__ganador_ronda {
+    color: #fff;
+    background: yellowgreen;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.juego__ganador {
+    margin: 5px 50px;
+    padding: 10px;
+    background: rgb(108, 145, 36);
+    border-radius: 5px;
+    font-size: 1.3rem;
+    color: #fff;
+}
+
 
 /* Estilos de la Eleccion */
 .juego__eleccion {
@@ -186,6 +229,45 @@ body {
     box-shadow: 0 0.2rem 0.5rem #000;
 }
 
+/* Estilos de las puntuaciones */
+.juego__puntuaciones {
+    margin: 10px 0;
+    padding: 5px 0;
+    background: #0085d1;
+    border-radius: 5px;
+    color: #fff;
+    
+}
+
+/* Estilos del titulo Puntos*/ 
+.juego__puntuaciones-titulo {
+    margin: 5px 0;
+    font-size: 1.3rem;
+}
+
+/* Estilos del fondo de los puntajes */
+.juego__puntuaciones-fondo {
+    margin: 0 5px;
+    background: #003b5d;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* Estilos para el puntaje del usuario*/
+.juego__punto-jugador {
+    margin: 5px 0;
+    padding: 0 1rem;
+    border-radius: 5px;
+}
+
+/* Estilos para el puntaje de la PC*/
+.juego__punto-pc {
+    margin: 5px 0;
+    padding: 0 1rem;
+    border-radius: 5px;
+}
+
 /* ----- Estilos para validacion de campo de Usuario Vacio ----- */
 .juego__mensaje-vacio {
     display: none;
@@ -197,4 +279,8 @@ body {
     border-radius: 5px;
     color: red;
     display: flex;
+}
+
+.juego__partidas-costado-activa {
+    display: block;
 }
