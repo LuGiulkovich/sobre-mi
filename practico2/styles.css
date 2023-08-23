@@ -7,6 +7,62 @@ body {
     background: url(juegoppt.png);
 }
 
+/*Estilos del Mensaje del Ganador */
+
+.mensaje__ganador-tapando {
+    display: none;
+    place-content: center;
+}
+
+.mensaje__ganador {
+    z-index: 1;
+    background-color: #000;
+    margin: 100px 0;
+    border: none;
+    padding: 1rem 4rem;
+    color: #000;
+    font-size: 4rem;
+    font-weight: bold;
+    position: relative;
+    border-radius: 12px;
+    
+}
+
+.mensaje__ganador::before {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg,
+    #e60012, #ffe000, #0085d1, #ffe000,
+    #e60012, #ffe000, #0085d1, #ffe000);
+    background-size: 800%;
+    border-radius: 10px;
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+    
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.mensaje__ganador-tapando-apareciendo {
+    display: grid;
+}
+
 /* Estilos del Título */
 .juego__titulo {
     width: 400px;
@@ -113,8 +169,6 @@ body {
     display: flex;
     justify-content: center;
 }
-
-
 
 /* Estilos del titulo de las rondas */
 .juego__partidas-rondas {
@@ -229,6 +283,11 @@ body {
     box-shadow: 0 0.2rem 0.5rem #000;
 }
 
+/* Estilos del ganador */
+.ganador {
+    text-align: center;
+}
+
 /* Estilos de las puntuaciones */
 .juego__puntuaciones {
     margin: 10px 0;
@@ -268,12 +327,27 @@ body {
     border-radius: 5px;
 }
 
+/* Estilos para el boton de Jugar De Nuevo */
+.juego__btn-jugar-de-nuevo {
+    display: flex;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 3px solid #000;
+    border-radius: 5px;
+    font-size: 20px;
+    font-family: 'Barriecito', sans-serif;
+    transition: box-shadow 0.3s ease;
+}
+
+.juego__btn-jugar-de-nuevo:hover {
+    box-shadow: 0 0.2rem 0.5rem #000;
+}
 /* ----- Estilos para validacion de campo de Usuario Vacio ----- */
 .juego__mensaje-vacio {
     display: none;
 }
 
-/* Acá se a mostrar con display: flex;*/
+/* Acá se va a mostrar con display: flex;*/
 .juego__mensaje-vacio-activado {
     background-color: #fff;
     border-radius: 5px;
@@ -283,4 +357,9 @@ body {
 
 .juego__partidas-costado-activa {
     display: block;
+}
+
+/* Quitar interfaz de partida al perder o ganar */
+.sacar-juego {
+    display: none;
 }
