@@ -9,99 +9,105 @@
 </head>
 
 <body>
-    <!-- Grupo: Título -->
-    <div class="juego__titulo" id="juego__titulo">
-        <header>Juego</header>
-    </div>
-    <!-- Grupo: Juego -->
-    <div class="juego__orden">
-        <form class="juego" id="juego">
-            <!-- Grupo: Subtítulo -->
-            <div class="juego__subtitulo" id="juego__subtitulo">
-                <h2>Piedra, Papel y Tijeras</h2>
-            </div>
-            <!-- Grupo: Interfaz del Jugador -->
-            <div class="juego__interfaz-jugador" id="juego__interfaz-jugador">
-                <h3 class="juego__jugador-p" id="juego__jugador-p">Jugador</h3>
-                <div class="juego__interfaz-input">
-                    <input type="text" class="juego__interfaz-input-nombre" id="juego__interfaz-input-nombre"
-                        name="nombreJugador" placeholder="Elige tu nombre" />
-                </div>
-                <p class="juego__mensaje-vacio" id="juego__mensaje-vacio">
-                    Sin un nombre de Jugador no podemos jugar :'(
-                </p>
-            </div>
-            <!-- Grupo: Cantidad de Partidas --> <!--
-        <div class="juego__partidas" id="juego__partidas">
-            <label for="cantidad" class="juego__interfaz-cantidad" id="juego__interfaz-cantidad">Modo de Juego</label>
-            <div class="juego__cant-partidas" id="juego__cant-partidas">
-                <select class="juego__cantidad-partidas" id="cantidad">
-                    <option selected disabled>Elige un modo</option>
-                    <option value="1">Mano a Mano</option>
-                    <option value="3">El mejor de 3</option>
-                    <option value="5">El mejor de 5</option>
-                </select>
-            </div>
-        </div> -->
-            <!-- Grupo: Opciones -->
-            <div class="juego__eleccion" id="juego__eleccion">
-                <label for="eleccion" class="juego__interfaz-opcion" id="juego__interfaz-opcion">¿Qué Eliges?</label>
-                <div class="juego__opciones" id="juego__opciones">
-                    <div class="juego__borde-btn" id="juego__borde-btn">
-                        <button value="piedra" type="button" class="juego__btn" id="piedra"><img src="piedraImg.png"
-                                class="juego__img"></button>
-                    </div>
-                    <div class="juego__borde-btn" id="juego__borde-btn">
-                        <button type="button" class="juego__btn" id="papel"><img src="papelImg.png"
-                                class="juego__img"></button>
-                    </div>
-                    <div class="juego__borde-btn" id="juego__borde-btn">
-                        <button type="button" class="juego__btn" id="tijeras"><img src="tijerasImg.png"
-                                class="juego__img"></button>
-                    </div>
-                </div>
-            </div>
-            <!-- Grupo: Let´s GO!!! -->
-            <div class="juego__juego" id="juego__juego">
-                <button class="juego__btn-jugar" id="juego__btn-jugar" type="button"
-                    onclick="campoVacio();">Jugar</button>
-            </div>
-            <!-- Grupo: Reinicio -->
-            <div class="juego__reinicio" id="juego__reinicio">
-                <button class="juego__btn-reinicio" onclick="reiniciarPartida();">Reiniciar</button>
-            </div>
-        </form>
-        <!-- Grupo: Rondas -->
-        <div class="juego__partidas-costado" id="juego__partidas-costado">
-            <div class="juego__partidas">
-                <div class="juego__partidas-rondas">Ronda <span id="numeroRonda"></span></div>
-            </div>
-            <p>Jugador: <span id="nombreUsuario"></span></p>
-            <p>Elige: <span id="eleccionUsuario"></span></p>
-            <p>PC elige: <span id="eleccionPC"></span></p>
-            <div class="juego__ganador_ronda">
-                <p>El ganador de la ronda es:</p>
-                <p class="juego__ganador" id="ganador"></p>
-            </div>
-            <!-- Grupo: Puntuaciones-->
-            <div class="juego__puntuaciones">
-                <p class="juego__puntuaciones-titulo">Puntos</p>
-                <div class="juego__puntuaciones-fondo">
-                    <div class="juego__punto-jugador">
-                        <p id="nombreUsuarioPunto"></p>
-                        <p id="puntoUsuario"></p>
-                    </div>
-                    <div class="juego__punto-pc">
-                        <p>PC</p>
-                        <p id="puntoPC"></p>
-                    </div>
-                </div>
-                <p>Empates: <span id="empates"></span></p>
-            </div>
-
+    <!-- Grupo: Mensaje Ganador -->
+    <div class="mensaje__ganador-tapando" id="mensaje__ganador-tapando">
+        <div class="mensaje__ganador">
+            <p class="ganador" id="ganador-ganador"></p>
+        </div>
+        <!-- Grupo: Reinicio -->
+        <div class="juego__reinicio" id="juego__reinicio">
+            <button type="submit" class="juego__btn-jugar-de-nuevo" onclick="reiniciarPartida();">Jugar de Nuevo</button>
+        </div>
+        <!-- Grupo: Mostrar resultado -->
+        <div class="juego__reinicio" id="juego__reinicio">
+            <button type="submit" class="juego__btn-jugar-de-nuevo" onclick="mostrarResultado();">Mostrar Resultado</button>
         </div>
     </div>
 
+    <!-- Grupo: Título -->
+    <div class="sacar" id="sacar">
+        <div class="juego__titulo" id="juego__titulo">
+            <header>Juego</header>
+        </div>
+        <!-- Grupo: Juego -->
+        <div class="juego__orden">
+            <form class="juego" id="juego">
+                <!-- Grupo: Subtítulo -->
+                <div class="juego__subtitulo" id="juego__subtitulo">
+                    <h2>Piedra, Papel y Tijeras</h2>
+                </div>
+                <!-- Grupo: Interfaz del Jugador -->
+                <div class="juego__interfaz-jugador" id="juego__interfaz-jugador">
+                    <h3 class="juego__jugador-p" id="juego__jugador-p">Jugador</h3>
+                    <div class="juego__interfaz-input">
+                        <input type="text" class="juego__interfaz-input-nombre" id="juego__interfaz-input-nombre"
+                            name="nombreJugador" placeholder="Elige tu nombre" />
+                    </div>
+                    <p class="juego__mensaje-vacio" id="juego__mensaje-vacio">
+                        Sin un nombre de Jugador no podemos jugar :'(
+                    </p>
+                </div>
+                <!-- Grupo: Opciones -->
+                <div class="juego__eleccion" id="juego__eleccion">
+                    <label for="eleccion" class="juego__interfaz-opcion" id="juego__interfaz-opcion">¿Qué
+                        Eliges?</label>
+                    <div class="juego__opciones" id="juego__opciones">
+                        <div class="juego__borde-btn" id="juego__borde-btn">
+                            <button value="piedra" type="button" class="juego__btn" id="piedra"><img src="piedraImg.png"
+                                    class="juego__img"></button>
+                        </div>
+                        <div class="juego__borde-btn" id="juego__borde-btn">
+                            <button type="button" class="juego__btn" id="papel"><img src="papelImg.png"
+                                    class="juego__img"></button>
+                        </div>
+                        <div class="juego__borde-btn" id="juego__borde-btn">
+                            <button type="button" class="juego__btn" id="tijeras"><img src="tijerasImg.png"
+                                    class="juego__img"></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Grupo: Let´s GO!!! -->
+                <div class="juego__juego" id="juego__juego">
+                    <button class="juego__btn-jugar" id="juego__btn-jugar" type="button"
+                        onclick="campoVacio();">Jugar</button>
+                </div>
+                <!-- Grupo: Reinicio -->
+                <div class="juego__reinicio" id="juego__reinicio">
+                    <button class="juego__btn-reinicio" onclick="reiniciarPartida();">Reiniciar</button>
+                </div>
+            </form>
+            <!-- Grupo: Rondas -->
+            <div class="juego__partidas-costado" id="juego__partidas-costado">
+                <div class="juego__partidas">
+                    <div class="juego__partidas-rondas">Ronda <span id="numeroRonda"></span></div>
+                </div>
+                <p>Jugador: <span id="nombreUsuario"></span></p>
+                <p>Elige: <span id="eleccionUsuario"></span></p>
+                <p>PC elige: <span id="eleccionPC"></span></p>
+                <div class="juego__ganador_ronda">
+                    <p>El ganador de la ronda es:</p>
+                    <p class="juego__ganador" id="ganador"></p>
+                </div>
+                <!-- Grupo: Puntuaciones-->
+                <div class="juego__puntuaciones">
+                    <p class="juego__puntuaciones-titulo">Puntos</p>
+                    <div class="juego__puntuaciones-fondo">
+                        <div class="juego__punto-jugador">
+                            <p id="nombreUsuarioPunto"></p>
+                            <p id="puntoUsuario"></p>
+                        </div>
+                        <div class="juego__punto-pc">
+                            <p>PC</p>
+                            <p id="puntoPC"></p>
+                        </div>
+                    </div>
+                    <p>Empates: <span id="empates"></span></p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
     <!-- Conexiones -->
     <script src="juego.js"></script>
     <script src="https://kit.fontawesome.com/f463a26620.js" crossorigin="anonymous"></script>
