@@ -3,8 +3,20 @@ const nombreJugador = document.getElementById('juego__interfaz-input-nombre');
 
 /** Funcion para reiniciar la partida. */
 function reiniciarPartida() {
+    document.getElementById('sacar').classList.remove('sacar-juego');
+    document.getElementById('mensaje__ganador-tapando').classList.remove('mensaje__ganador-tapando-apareciendo');
+    document.getElementById('juego__partidas-costado').classList.remove('juego__partidas-costado-activa');
+    numeroRonda = 1;
+    txtRondas.textContent = numeroRonda;
+    puntosPC = 0;
+    txtPuntoPC.textContent = puntosPC;
+    puntosUsuario = 0;
+    txtPuntoUsuario.textContent = puntosUsuario;
+    empates = 0;
+    txtEmpates.textContent = empates;
     document.getElementById('juego').reset();
 }
+
 
 /** Funcion para validar que el nombre ingresado por
  * parte del usuario no esté vacio. */
@@ -87,7 +99,7 @@ let empates = 0;
 /** Llamo al span que tiene los empates. */
 let txtEmpates = document.getElementById('empates');
 
-/** Agrego el nomnbre del usuario en el puntuador. */
+/** Agrego el nombre del usuario en el puntuador. */
 let usuarioNombre = document.getElementById('nombreUsuarioPunto');
 
 /** Llamo los parrafos que van a contener los puntajes. */
@@ -95,10 +107,13 @@ let txtPuntoPC = document.getElementById('puntoPC');
 let txtPuntoUsuario = document.getElementById('puntoUsuario');
 
 /** Declaro una variable para contar las rondas. */
-let numeroRonda = 0;
+let numeroRonda = 1;
 
 /** LLamo a las rondas. */
 let txtRondas = document.getElementById('numeroRonda');
+
+/** LLamo al parrafo que va a contener al ganador. */
+let ganador = document.getElementById('ganador-ganador');
 
 /** Funcion para jugar. */
 function jugar() {
@@ -160,11 +175,12 @@ function jugar() {
             document.getElementById('ganador').innerHTML = nombreGuardado;
             puntosUsuario += 1;
         } else if (eleccionPC == "Tijeras") {
-            document.getElementById('ganador').innerHTML = 'Ninguno, empate';
+            document.getElementById('ganador').innerHTML = 'Empate';
             empates += 1;
         }
-        
+
     }
+
     /** Sumo la cantidad de rondas. */
     numeroRonda += 1;
 
@@ -175,8 +191,22 @@ function jugar() {
     txtPuntoPC.textContent = puntosPC;
     txtPuntoUsuario.textContent = puntosUsuario;
 
-    
-
     /** Agrego la cantidad de empates. */
     txtEmpates.textContent = empates;
+
+    if (numeroRonda == 6) {
+        if (puntosUsuario < puntosPC) {
+            ganador.textContent = "Ganador: PC";
+            document.getElementById('mensaje__ganador-tapando').classList.add('mensaje__ganador-tapando-apareciendo');
+            document.getElementById('sacar').classList.add('sacar-juego');
+        } else if (puntosUsuario > puntosPC) {
+            ganador.textContent = "Ganador: " + nombreGuardado;
+            document.getElementById('mensaje__ganador-tapando').classList.add('mensaje__ganador-tapando-apareciendo');
+            document.getElementById('sacar').classList.add('sacar-juego');
+        } else if (empates > puntosPC || empates > puntosUsuario) {
+            ganador.textContent = "Empate";
+            document.getElementById('mensaje__ganador-tapando').classList.add('mensaje__ganador-tapando-apareciendo');
+            document.getElementById('sacar').classList.add('sacar-juego');
+        }
+    } 
 }
