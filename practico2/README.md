@@ -139,6 +139,49 @@ La solución fue ponerlo mas abajo para que se ejecutara bien.
     numeroRonda += 1;
 ~~~
 
+
+### 6to Error: Los F*ckin Empates
+
+Hago una sección destinada a los empates ya que el juego ha tenido varios problemas gracias a estos.
+
+#### Si los Empates ganan o empatan la partida se rompe
+
+Resulta que testeando sirguió un bug que era el siguiente: Cuando los empates obtenian el mismo resultado que el puntaje ya sea del Jugador o la PC no se ejecutaba la parte del codigo que muestra el mensaje del ganador. La partida podía seguir infinitamente hasta que oprimiera Reiniciar.
+
+> Todavía no logro resolver este bug. :'(.
+
+#### Condiciones del Ganador
+
+Previamente los empates se encontraban como condición de ganador, y decidí sacarlos ya que el codigo empeoraba y era dificil de leer. y quedó así: 
+
+~~~
+if (puntosPC == 3 || puntosPC > puntosUsuario) {
+    ganador.textContent = "Ganador: PC";
+} else if (puntosUsuario == 3 || puntosUsuario > puntosPC) {
+    ganador.textContent = "Ganador: " + nombreGuardado;
+} else {
+    ganador.textContent = "Empate";
+}
+~~~
+
+#### El Usuario no gana?
+
+Probando el codigo anterior el juego seguía sin mostrar al Usuario como ganador.
+Moviendo, copiando y pegando el codigo por doquier se me ocurrió quitarlo de la función de donde había puesto las condiciones del ganador y pegandolo directamente en la funcion jugar() y como por arte de magia el código aunduvo sin problemas.
+
+### 7mo Error: Al oprimir el botón jugar de nuevo se elimina todo
+
+Configueré un botón para mostrar los resultados de la partida ya que tenía dudas de si estaba bien lo que me mostraba el mensaje del ganador y hasta ahí todo bien, pero cuando oprimo Volver A Jugar simplemente todo el juego parece que se le aplica display: none;.
+Leyendo el codigo me di cuenta que con "mostrar resultado" quitaba las interfaces para volver a jugar, entonces la solución era sencilla:
+
+Agregar los estilos que había quitado cuando oprimír "Mostrar Resultado".
+
+~~~
+document.getElementById('juego__titulo').classList.remove('juego__titulo-quitar');
+document.getElementById('juego').classList.remove('juego-sacar');
+~~~
+
+
 ## Información Utilizada
 
 Esta fue la información en la que me base y ayudé a hacer mi proyecto
