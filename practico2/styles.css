@@ -7,17 +7,20 @@ body {
     background: url(juegoppt.png);
 }
 
-/*Estilos del Mensaje del Ganador */
 
+
+/* ----- ----- Estilos del Mensaje del Ganador ----- ----- */
+/* Estilos para que no esté visible */
 .mensaje__ganador-tapando {
     display: none;
     place-content: center;
 }
 
+/* Estilos del mensaje */
 .mensaje__ganador {
     z-index: 1;
-    background-color: #000;
-    margin: 100px 0;
+    background-color: #fff;
+    margin: 20px auto;
     border: none;
     padding: 1rem 4rem;
     color: #000;
@@ -25,9 +28,14 @@ body {
     font-weight: bold;
     position: relative;
     border-radius: 12px;
-    
+    transition: box-shadow 0.3s ease;
 }
 
+.mensaje__ganador:hover {
+    box-shadow: 0 1rem 2rem #000;
+}
+
+/* Estilos del gradiente */
 .mensaje__ganador::before {
     z-index: -1;
     content: "";
@@ -45,6 +53,7 @@ body {
     animation: glowing 20s linear infinite;
 }
 
+/* Animación glowing */
 @keyframes glowing {
     0% {
         background-position: 0 0;
@@ -59,10 +68,30 @@ body {
     }
 }
 
-.mensaje__ganador-tapando-apareciendo {
-    display: grid;
+/* Estilos para el boton de Jugar De Nuevo y Mostrar Resultados */
+.juego__btn-jugar-de-nuevo {
+    display: flex;
+    margin: 20px auto;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border: 3px solid #000;
+    border-radius: 5px;
+    font-size: 20px;
+    font-family: 'Barriecito', sans-serif;
+    transition: box-shadow 0.3s ease;
 }
 
+.juego__btn-jugar-de-nuevo:hover {
+    box-shadow: 0 0.2rem 1rem #000;
+    padding: 1rem;
+    cursor: pointer;
+    background-color: #000;
+    border: 3px solid #fff;
+    color: #fff;
+}
+
+
+/** ----- ----- Estilos del Juego ----- ----- */
 /* Estilos del Título */
 .juego__titulo {
     width: 400px;
@@ -91,6 +120,11 @@ body {
     background: #fff;
     border: 6px solid #000;
     border-radius: 5px;
+    transition: box-shadow 0.3s ease;
+}
+
+.juego:hover {
+    box-shadow: 0.5rem 0.5rem 3rem #000;
 }
 
 /* Estilos del Subtítulo */
@@ -101,6 +135,9 @@ body {
     font-size: 20px;
 }
 
+
+
+/* ----- ----- Interfaz del Jugador ----- ----- */
 /* Estilos de la Interfaz del jugador */
 .juego__interfaz-jugador {
     text-align: center;
@@ -124,6 +161,7 @@ body {
 
 /* Estilos del input */
 .juego__interfaz-input {
+    height: 30px;
     margin: 5px 0; 
     padding: 10px;
     background: #003b5d;
@@ -132,7 +170,7 @@ body {
     border-radius: 5px;
 }
 
-/* Estilos del input nombre*/
+/* Estilos del input nombre */
 .juego__interfaz-input-nombre {
     width: 100%;
     position: relative;
@@ -143,59 +181,6 @@ body {
     border-radius: 5px;
     outline: 0px;
 }
-
-/* Estilos del div contenedor del las rondas */
-.juego__partidas-costado {
-    width: 400px;
-    margin: 0;
-    margin-left: 5px;
-    padding: .5rem;
-    text-align: center;
-    color: #000;
-    background-color: #fff;
-    border: 6px solid #000;
-    border-radius: 5px;
-    display: none;
-}
-
-/* Estilos de las Partidas*/
-.juego__partidas {
-    margin: 10px 0;
-    padding: 3px;
-    background: #e60012;
-    color: #fff;
-    border-radius: 5px;
-    font-size: 25px;
-    display: flex;
-    justify-content: center;
-}
-
-/* Estilos del titulo de las rondas */
-.juego__partidas-rondas {
-    margin: 5px 0; 
-    padding: 10px;
-    background: #5b0008;
-    border-radius: 5px;
-    font-size: 1.3rem;
-}
-
-/* Estilo del ganador */
-.juego__ganador_ronda {
-    color: #fff;
-    background: yellowgreen;
-    border-radius: 5px;
-    padding: 3px;
-}
-
-.juego__ganador {
-    margin: 5px 50px;
-    padding: 10px;
-    background: rgb(108, 145, 36);
-    border-radius: 5px;
-    font-size: 1.3rem;
-    color: #fff;
-}
-
 
 /* Estilos de la Eleccion */
 .juego__eleccion {
@@ -224,6 +209,13 @@ body {
     display: flex;
 }
 
+/* ----- Estilos para las imagenes ----- */
+.juego__img {
+    width: 100px;
+    height: 100px;
+    margin: 10px 10px;
+}
+
 /* Estilos de los botones */
 .juego__btn {
     border: 5px solid #000;
@@ -234,20 +226,7 @@ body {
 
 .juego__btn:hover {
     opacity: 1;
-}
-
-/* Estilo para cuando se seleccione la opcion */
-.juego__btn-activa {
-    opacity: 1;
-    border-radius: 100px;
-    border: 5px solid yellowgreen !important;
-}
-
-/* ----- Estilos para las imagenes ----- */
-.juego__img {
-    width: 100px;
-    height: 100px;
-    margin: 10px 10px;
+    cursor: pointer;
 }
 
 /* Estilos para el boton de Jugar*/
@@ -264,13 +243,15 @@ body {
 }
 
 .juego__btn-jugar:hover {
-    box-shadow: 0 0.2rem 0.5rem #000;
+    box-shadow: 0 0.2rem 2rem #000;
+    padding: 15px 80px;
+    cursor: pointer;
 }
 
-/* Estilos del boton para reiniciar la partida*/
+/* Estilos del boton Reiniciar */
 .juego__btn-reinicio {
-    margin: 10px 0;
-    padding: 10px auto;
+    margin: 10px auto;
+    padding: 10px;
     background-color: rgb(95, 122, 40);
     border: 3px solid #000;
     border-radius: 5px;
@@ -281,9 +262,72 @@ body {
 
 .juego__btn-reinicio:hover {
     box-shadow: 0 0.2rem 0.5rem #000;
+    padding: 15px;
+    cursor: pointer;
 }
 
-/* Estilos del ganador */
+
+
+/* ----- ----- Interfaz de las Rondas ----- ----- */
+/* Estilos del div contenedor del las rondas */
+.juego__partidas-costado {
+    width: 400px;
+    margin: 0;
+    margin-left: 5px;
+    padding: .5rem;
+    text-align: center;
+    color: #000;
+    background-color: #fff;
+    border: 6px solid #000;
+    border-radius: 5px;
+    display: none;
+    transition: box-shadow .3s ease;
+}
+
+.juego__partidas-costado:hover {
+    box-shadow: 0.5rem 0.5rem 3rem #000;
+}
+
+/* Estilos de las Partidas (Titulo)*/
+.juego__partidas {
+    margin: 10px 0;
+    padding: 3px;
+    background: #e60012;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilos del fondo del titulo de las rondas */
+.juego__partidas-rondas {
+    margin: 5px 0; 
+    padding: 10px;
+    background: #5b0008;
+    border-radius: 5px;
+    font-size: 1.3rem;
+}
+
+/* Estilo del ganador de ronda (Ganador de Ronda) */
+.juego__ganador_ronda {
+    color: #fff;
+    background: yellowgreen;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+/* Estilos del fondo del ganador de ronda */
+.juego__ganador {
+    margin: 5px 50px;
+    padding: 10px;
+    background: rgb(108, 145, 36);
+    border-radius: 5px;
+    font-size: 1.3rem;
+    color: #fff;
+}
+
+/* Estilos del ganador (Texto) */
 .ganador {
     text-align: center;
 }
@@ -327,22 +371,11 @@ body {
     border-radius: 5px;
 }
 
-/* Estilos para el boton de Jugar De Nuevo */
-.juego__btn-jugar-de-nuevo {
-    display: flex;
-    margin: 0 auto;
-    background-color: #fff;
-    border: 3px solid #000;
-    border-radius: 5px;
-    font-size: 20px;
-    font-family: 'Barriecito', sans-serif;
-    transition: box-shadow 0.3s ease;
-}
 
-.juego__btn-jugar-de-nuevo:hover {
-    box-shadow: 0 0.2rem 0.5rem #000;
-}
-/* ----- Estilos para validacion de campo de Usuario Vacio ----- */
+
+/* ----- ----- PSeudo Animaciones ----- ----- */
+
+/* Estilos para el mensaje del campo vacío */
 .juego__mensaje-vacio {
     display: none;
 }
@@ -355,11 +388,42 @@ body {
     display: flex;
 }
 
+/* Estilo para cuando se seleccione la opcion (Botones) */
+.juego__btn-activa {
+    opacity: 1;
+    border-radius: 100px;
+    border: 5px solid yellowgreen !important;
+    margin: 10px;
+}
+
+/* ----- Hace aparecer la interfaz de las partidas ----- */
+/* Al empezar el juego */
 .juego__partidas-costado-activa {
     display: block;
 }
 
+/* Estilo para que aprezca el mensaje del ganador */
+.mensaje__ganador-tapando-apareciendo {
+    display: grid;
+}
+
 /* Quitar interfaz de partida al perder o ganar */
 .sacar-juego {
+    display: none;
+}
+
+/* ----- Al mostrar los resultados ----- */
+/* Vuelve a mostrar los resultados */
+.juego__partidas-costado-resultados {
+    display: flex;
+}
+
+/* Quita el titulo */
+.juego__titulo-quitar {
+    display: none;
+}
+
+/* Quita la interfaz del jugador */
+.juego-sacar {
     display: none;
 }
