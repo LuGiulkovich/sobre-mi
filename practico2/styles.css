@@ -375,17 +375,36 @@ body {
 
 /* ----- ----- PSeudo Animaciones ----- ----- */
 
-/* Estilos para el mensaje del campo vacío */
+/* Estilos para el mensaje del campo vacío u opcion sin elegir */
 .juego__mensaje-vacio {
     display: none;
 }
 
 /* Acá se va a mostrar con display: flex;*/
 .juego__mensaje-vacio-activado {
+    margin: 0.8rem 0;
+    padding: 0.8rem;
+    justify-content: center;
     background-color: #fff;
-    border-radius: 5px;
+    border: 0.2rem solid red;
+    border-radius: 0.3rem;
     color: red;
     display: flex;
+    box-shadow: 0.5rem 0.5rem 3rem #000;
+    animation: deLadoALado 2s infinite;
+}
+
+
+@keyframes deLadoALado {
+    0% {
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(5deg);
+    }
 }
 
 /* Estilo para cuando se seleccione la opcion (Botones) */
