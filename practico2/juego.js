@@ -45,8 +45,8 @@ function campoVacio() {
         document.getElementById('juego__mensaje-vacio').classList.add('juego__mensaje-vacio');
         /** Agrego el nombre del usuario en las estadisticas. */
         usuarioEstadisticas.textContent = nombre;
-        /** Una vez agregado el nombre al jugar desabilito el imput. */
-        nombreJugador.disabled = true;
+        /** Una vez agregado el nombre al jugar desabilito el imput. 
+        nombreJugador.disabled = true;*/
     }
 }
 /** Validacion de campo vacio al tocar tecla. */
@@ -90,7 +90,7 @@ tijeras.addEventListener('click', () => {
     pikachuYoTeEligo = "Tijeras";
     document.getElementById('eleccionUsuario').innerHTML = pikachuYoTeEligo;
 });
-/** Le doy el evento click con la funcion Jugar para que me ejecute la partida. */
+/** Le doy el evento click al boton comenzar con la funcion Jugar para que me ejecute la partida. */
 pc.addEventListener('click', jugar);
 
 
@@ -99,6 +99,21 @@ pc.addEventListener('click', jugar);
 function jugar() {
     /** Guardo el valor del nombre de Usuario. */
     const nombreGuardado = nombreJugador.value;
+
+    /** Agrego validación para que sin un nombre no continúe el juego... */
+    if (nombreGuardado === undefined || nombreGuardado === '') {
+        /** ...y le permita al usuario agregar un nombre antes de empezar a jugar. */
+        return;
+    } 
+
+    /** Agrego validación para que la opción del jugador no sea vacía. */
+    if (pikachuYoTeEligo !== "Piedra" && pikachuYoTeEligo !== "Papel" && pikachuYoTeEligo !== "Tijeras") {
+        document.getElementById('juego__mensaje-sin-opcion').classList.add('juego__mensaje-vacio-activado');
+        return;
+    } else {
+        document.getElementById('juego__mensaje-sin-opcion').classList.remove('juego__mensaje-vacio-activado');
+    }
+    
 
     /** Hago que aprezca la interfaz de partidas. */
     document.getElementById('juego__partidas-costado').classList.add('juego__partidas-costado-activa');
@@ -134,7 +149,7 @@ function jugar() {
             document.getElementById('ganador').innerHTML = 'Empate';
             /** y le sumo al contador de empate. */
             empates += 1;
-        /** Y así respectivamente. */
+            /** Y así respectivamente. */
         } else if (eleccionPC == "Papel") {
             document.getElementById('ganador').innerHTML = 'PC';
             puntosPC += 1;
@@ -181,26 +196,24 @@ function jugar() {
     txtEmpates.textContent = empates;
 
     /** Condiciones del Ganador. */
-    if (numeroRonda == 6) {
-        if (puntosPC > puntosUsuario) {
-            /** Agrego al mensaje de ganador la PC. */
-            ganador.textContent = "Ganador: PC";
-            /** Muestro el mensaje del ganador. */
-            document.getElementById('mensaje__ganador-tapando').classList.add('mensaje__ganador-tapando-apareciendo');
-            /** Quito el juego de pantalla. */
-            document.getElementById('sacar').classList.add('sacar-juego');
-        } else if (puntosUsuario > puntosPC) {
-            /** Agrego al mensaje de ganador el nombre del Usuario. */
-            ganador.textContent = "Ganador: " + nombreGuardado;
-            document.getElementById('mensaje__ganador-tapando').classList.add('mensaje__ganador-tapando-apareciendo');
-            document.getElementById('sacar').classList.add('sacar-juego');
-        } else {
-            /** Agrego al mensaje de ganador Empate, */
-            ganador.textContent = "Empate";
-            document.getElementById('mensaje__ganador-tapando').classList.add('mensaje__ganador-tapando-apareciendo');
-            document.getElementById('sacar').classList.add('sacar-juego');
-        }
-    } 
+    if (puntosPC == 3) {
+        /** Agrego al mensaje de ganador la PC. */
+        ganador.textContent = "Ganador: PC";
+        /** Muestro el mensaje del ganador. */
+        document.getElementById('mensaje__ganador-tapando').classList.add('mensaje__ganador-tapando-apareciendo');
+        /** Quito el juego de pantalla. */
+        document.getElementById('sacar').classList.add('sacar-juego');
+    } else if (puntosUsuario == 3) {
+        /** Agrego al mensaje de ganador el nombre del Usuario. */
+        ganador.textContent = "Ganador: " + nombreGuardado;
+        document.getElementById('mensaje__ganador-tapando').classList.add('mensaje__ganador-tapando-apareciendo');
+        document.getElementById('sacar').classList.add('sacar-juego');
+    } /**else {
+         Agrego al mensaje de ganador Empate, 
+        ganador.textContent = "Empate";
+        document.getElementById('mensaje__ganador-tapando').classList.add('mensaje__ganador-tapando-apareciendo');
+        document.getElementById('sacar').classList.add('sacar-juego');
+    }*/
 }
 
 
@@ -252,8 +265,6 @@ function jugarDeNuevo() {
     txtPuntoUsuario.textContent = puntosUsuario;
     empates = 0;
     txtEmpates.textContent = empates;
-    /** Reinicio el form que contiene el nombre de usuario y las opciones. */
-    document.getElementById('juego').reset();
 }
 
 
