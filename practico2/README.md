@@ -181,6 +181,43 @@ document.getElementById('juego__titulo').classList.remove('juego__titulo-quitar'
 document.getElementById('juego').classList.remove('juego-sacar');
 ~~~
 
+### 8vo Error: El juego sigue aún sin nombre 
+
+Al principio el juego se continuaba a pesar de que el input no contenía ni un solo nombre. Ya que la ejecución del resto del código que hay en la función jugar() seguía corriendo al oprimir el boton Comenzar.
+Mi codigo era este:
+
+~~~
+if (nombreGuardado === '') {
+    document.getElementById('juego').reset();
+    }
+~~~
+
+La solución la consulté en una clase práctica y un compañero me ayudó.
+Era que sin el return no podía cortar la ejecución de lo que quedaba del código, así que se lo agregué:
+
+~~~
+if (nombreGuardado === undefined || nombreGuardado === '') {
+        document.getElementById('juego').reset();
+        return
+    }
+~~~
+
+PD: Gracias Francisco (compañero de cursado) por la ayuda uWu.
+
+### 9no Error: El juego continúa a pesar de no elegir una opción
+
+Conprobando que el código empiece a funcionar como debería me encontré con una declaración que me faltaba pero que hasta el momento se me había pasado por alto y era la de que el juego tampoco empezara sin antes haber escogido una de las tres opciones disponible (Piedra, Papel o Tijeras).
+
+Lo que hice fue agregar una validacion para los campos de Piedra, Papel y Tijeras.
+
+~~~
+if (pikachuYoTeEligo !== "Piedra" && pikachuYoTeEligo !== "Papel" && pikachuYoTeEligo !== "Tijeras") {
+    document.getElementById('juego__mensaje-sin-opcion').classList.add('juego__mensaje-vacio-activado');
+    return;
+} else {
+    document.getElementById('juego__mensaje-sin-opcion').classList.remove('juego__mensaje-vacio-activado');
+}
+~~~
 
 ## Información Utilizada
 
