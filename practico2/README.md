@@ -24,9 +24,9 @@ Si nunca haz jugado este juego aquí estan las formas en las que puedes obtener 
 * Papel le gana a Piedra.
 * Tijeras le gana a Papel.
 
-❌ No puedes comenzar a jugar sin haber ingresado un nombre.
-❌ No puedes comenzar a jugar sin haber elegido una opcion.
-❌ Modo de juego: El mejor de 5.
+*❌ No puedes comenzar a jugar sin haber ingresado un nombre.
+*❌ No puedes comenzar a jugar sin haber elegido una opcion.
+*❌ Modo de juego: El mejor de 5.
 
 ## Contruido con 🛠️
 
