@@ -250,8 +250,9 @@ body {
 
 /* Estilos del boton Reiniciar */
 .juego__btn-reinicio {
-    margin: 10px auto;
+    margin: 0 auto;
     padding: 10px;
+    display: flex;
     background-color: rgb(95, 122, 40);
     border: 3px solid #000;
     border-radius: 5px;
@@ -411,7 +412,7 @@ body {
 .juego__btn-activa {
     opacity: 1;
     border-radius: 100px;
-    border: 5px solid yellowgreen !important;
+    border: 5px solid yellowgreen;
     margin: 10px;
 }
 
@@ -445,4 +446,58 @@ body {
 /* Quita la interfaz del jugador */
 .juego-sacar {
     display: none;
+}
+
+
+
+/* ----- ----- INTENTO DE MEDIA QUERY ----- ----- */
+
+@media (max-width:500px) {
+    /* Body */
+    body {
+        margin: 10px auto;
+        padding: 0;
+        display: grid;
+    }
+    /* Interfaz Usuario y Rondas */
+    .juego__orden {
+        margin: 10px auto;
+        display: grid;
+        grid-template-columns: auto;
+    }
+    /* Titulo */
+    .juego__titulo {
+        color: #fff;
+        background: #000;
+        border-color: #fff;
+    }
+    /* Estilos de la Interfaz del jugador */
+    .juego {
+        color: #fff;
+        background: #000;
+        border-color: #fff;
+    }
+    /* Estilos para las Rondas */
+    .juego__partidas-costado {
+        margin: 10px auto;
+        color: #fff;
+        background: #000;
+        border-color: #fff;
+    }
+    /* Estilos del ganado */
+    .mensaje__ganador-tapando {
+        margin: 10px auto;
+        grid-template-columns: auto;
+    }
+    /* Hovers */
+    .juego__btn-jugar:hover {
+        box-shadow: 0 0.2rem 1rem #fff;
+        cursor: pointer;
+    }
+    .juego__btn-reinicio:hover {
+        box-shadow: 0 0.2rem 1rem #fff;
+        padding: 15px;
+        cursor: pointer;
+    }
+
 }
