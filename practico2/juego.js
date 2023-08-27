@@ -114,6 +114,8 @@ function jugar() {
         document.getElementById('juego__mensaje-sin-opcion').classList.remove('juego__mensaje-vacio-activado');
     }
     
+    /** Le cambio el nombre al boton Comenzar por Jugar. */
+    document.getElementById('juego__btn-jugar').textContent = "Jugar";
 
     /** Hago que aprezca la interfaz de partidas. */
     document.getElementById('juego__partidas-costado').classList.add('juego__partidas-costado-activa');
@@ -208,12 +210,7 @@ function jugar() {
         ganador.textContent = "Ganador: " + nombreGuardado;
         document.getElementById('mensaje__ganador-tapando').classList.add('mensaje__ganador-tapando-apareciendo');
         document.getElementById('sacar').classList.add('sacar-juego');
-    } /**else {
-         Agrego al mensaje de ganador Empate, 
-        ganador.textContent = "Empate";
-        document.getElementById('mensaje__ganador-tapando').classList.add('mensaje__ganador-tapando-apareciendo');
-        document.getElementById('sacar').classList.add('sacar-juego');
-    }*/
+    }
 }
 
 
@@ -233,6 +230,8 @@ function reiniciarPartida() {
     /** Quito los estilos del mensaje vacio al reiniciar la partida. */
     document.getElementById('juego__mensaje-vacio').classList.remove('juego__mensaje-vacio-activado');
     document.getElementById('juego__mensaje-vacio').classList.add('juego__mensaje-vacio');
+    /** Le devuelvo el nombre al boton COmenzar. */
+    document.getElementById('juego__btn-jugar').textContent = "Comenzar";
     /** Acá reinicio todas las estadisticas. */
     numeroRonda = 1;
     txtRondas.textContent = numeroRonda;
@@ -250,8 +249,6 @@ function reiniciarPartida() {
 
 /** Creo la funcion Jugar de Nuevo luego de hacer terminado una partida. */
 function jugarDeNuevo() {
-    /** Reinicio el form que contiene el nombre de usuario y las opciones. */
-    document.getElementById('juego').reset();
     /** Al div que contiene la interfaz del ganador le remuevo el estilo display:grid; y me lo quita de pantalla. */
     document.getElementById('mensaje__ganador-tapando').classList.remove('mensaje__ganador-tapando-apareciendo');
     /** Al div que contiene el juego le remuevo el estilo display: none; y me muestra todo el juego de nuevo. */
@@ -265,6 +262,8 @@ function jugarDeNuevo() {
     txtPuntoUsuario.textContent = puntosUsuario;
     empates = 0;
     txtEmpates.textContent = empates;
+    /** Reinicio el form que contiene el nombre de usuario y las opciones. */
+    document.getElementById('juego').reset();
 }
 
 
