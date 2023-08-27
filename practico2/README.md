@@ -25,6 +25,7 @@ Si nunca haz jugado este juego aquí estan las formas en las que puedes obtener 
 * Tijeras le gana a Papel.
 
 #### ▪️▪️▪️ Limites ▪️▪️▪️
+
 * ❌ No puedes comenzar a jugar sin haber ingresado un nombre.
 * ❌ No puedes comenzar a jugar sin haber elegido una opcion.
 * ❌ Modo de juego: El mejor de 5.
