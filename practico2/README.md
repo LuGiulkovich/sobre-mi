@@ -24,6 +24,7 @@ Si nunca haz jugado este juego aquí estan las formas en las que puedes obtener 
 * Papel le gana a Piedra.
 * Tijeras le gana a Papel.
 
+#### ▪️▪️▪️ Limites ▪️▪️▪️
 * ❌ No puedes comenzar a jugar sin haber ingresado un nombre.
 * ❌ No puedes comenzar a jugar sin haber elegido una opcion.
 * ❌ Modo de juego: El mejor de 5.
@@ -267,7 +268,6 @@ Esta fue la información en la que me base y ayudé a hacer mi proyecto
 * [Botones y Evento onClick] (https://www.youtube.com/watch?v=-34Eqd93ZqE&t=528s) - Botones con evento Click.
 * [Validar Formularios] (https://www.youtube.com/watch?v=s3pC93LgP18&t=919s) - Validacion de mi input.
 * [Selector de Imágenes] (https://www.youtube.com/watch?v=an-xk7lOhl8&t=604s) - Estilos de los botones.
-* []
 
 
 ## Agredacimientos 
